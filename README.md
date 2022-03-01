@@ -38,7 +38,7 @@ Users should be able to:
 
 ### Links
 
-- Live Site URL: [Add live site URL here](https://jaimies-todo-list.netlify.app/)
+- Live Site URL: [ToDo App](https://jaimies-todo-list.netlify.app/)
 
 ## My process
 
