@@ -1,0 +1,295 @@
+*,::after,::before{box-sizing:border-box}blockquote,body,dd,dl,figure,h1,h2,h3,h4,p{margin:0}ol[role=list],ul[role=list]{list-style:none}html:focus-within{scroll-behavior:smooth}body{min-height:100vh;text-rendering:optimizeSpeed;line-height:1.5}a:not([class]){text-decoration-skip-ink:auto}img,picture{max-width:100%;display:block}button,input,select,textarea{font:inherit}@media (prefers-reduced-motion:reduce){html:focus-within{scroll-behavior:auto}*,::after,::before{animation-duration:0s!important;animation-iteration-count:1!important;transition-duration:0s!important;scroll-behavior:auto!important}}
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap');
+
+:root {
+  --BrightBlue: hsl(220, 98%, 61%);
+  --CheckBackground: linear-gradient(135deg, #55ddff 0%, #c058f3 100%);
+
+  /*========================*/
+  /*===== Light Theme ===== */
+  /*========================*/
+  --VeryLightGray: hsl(0, 0%, 98%);
+  --VeryLightGrayishBlue: hsl(236, 33%, 92%);
+  --LightGrayishBlue: hsl(233, 11%, 84%);
+  --DarkGrayishBlue: hsl(236, 9%, 61%);
+  --VeryDarkGrayishBlue: hsl(235, 19%, 35%);
+
+  /*========================*/
+  /*===== Dark Theme  ===== */
+  /*========================*/
+  --VeryDarkBlue: hsl(235, 21%, 11%);
+  --VeryDarkDesaturatedBlue: hsl(235, 24%, 19%);
+  --LightGrayishBlue: hsl(234, 39%, 85%);
+  --LightGrayishBlueHover: hsl(236, 33%, 92%);
+  --DarkGrayishBlue: hsl(234, 11%, 52%);
+  --VeryDarkGrayishBlue: hsl(237, 14%, 26%);
+}
+
+input:focus {
+  outline: none;
+}
+
+.container {
+  max-width: 570px;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 585px) {
+  .container {
+    max-width: 355px;
+  }
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.col {
+  flex: 0 0 50%;
+}
+
+body {
+  min-height: 100vh;
+  transition: background-color 0.3s ease-in-out;
+}
+
+body.dark {
+  background-color: var(--VeryDarkBlue);
+}
+
+body.light {
+  background-color: var(--VeryLightGray);
+}
+
+header {
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding-bottom: 80px;
+}
+
+.light header {
+  background-image: url('../images/bg-desktop-light.jpg');
+}
+
+.dark header {
+  background-image: url('../images/bg-desktop-dark.jpg');
+}
+
+h1 {
+  padding-top: 80px;
+  color: var(--VeryLightGray);
+  font-family: "Josefin Sans", sans-serif;
+  letter-spacing: 15px;
+  padding-bottom: 15px;
+  font-weight: 700;
+}
+
+#theme-toggle {
+  margin-top: 80px;
+  float: right;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+}
+
+#theme-toggle img {
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+header .input {
+  background-color: var(--VeryDarkDesaturatedBlue);
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  padding: 20px 20px;
+  width: 100%;
+  border-radius: 5px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.light header .input {
+  background-color: var(--VeryLightGray);
+}
+
+header .input .col-check {
+  flex: 0 0 45px;
+  position: relative;
+}
+
+header .input .col-check:after {
+  position: absolute;
+  content: "";
+  left: 0;
+  top: 0;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 2px solid var(--VeryDarkGrayishBlue);
+}
+
+header .input .col-text {
+  flex: 1;
+}
+
+header .input .col-text input {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 18px;
+  color: var(--LightGrayishBlue);
+  border: none;
+  background: transparent;
+  width: 100%;
+}
+
+.light header .input .col-text input {
+  color: var(--VeryDarkDesaturatedBlue);
+}
+
+.filters-mobile {
+  display: none;
+}
+
+#body main {
+  background-color: var(--VeryDarkDesaturatedBlue);
+  margin-top: -50px;
+  border-radius: 5px;
+}
+
+#body.light main {
+  background-color: var(--VeryLightGray);
+  box-shadow: 0 0 15px 1px rgba(0,0,0,0.2);
+}
+
+.filters {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  padding: 10px 20px;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--DarkGrayishBlue);
+  border-top: 1px solid var(--VeryDarkGrayishBlue);
+}
+
+.filters h4 {
+  font-weight: 400;
+}
+
+.filters ul {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+@media screen and (max-width: 585px) {
+  .filters ul {
+    display: none;
+  }
+
+  .filters-mobile {
+    display: block;
+  }
+}
+
+
+.filters ul li {
+  display: inline-block;
+  padding: 0 10px;
+  transition: color 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.filters .clear {
+  transition: color 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.filters .clear:hover,
+.filters ul li:hover {
+  color: var(--LightGrayishBlueHover);
+}
+
+.light .filters .clear:hover,
+.light .filters ul li:hover {
+  color: var(--VeryDarkGrayishBlue);
+}
+
+.todo {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  align-items: center;
+  color: var(--LightGrayishBlue);
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 18px;
+  cursor: move;
+}
+
+.light .todo {
+  color: var(--VeryDarkGrayishBlue);
+}
+
+.todo:not(:first-child) {
+  border-top: 1px solid var(--VeryDarkGrayishBlue);
+}
+
+.todo .cross {
+  width: 20px;
+  height: auto;
+  cursor: pointer;
+}
+
+.todo span {
+  flex: 1;
+  padding-left: 20px;
+}
+
+.todo .check {
+  border-radius: 50%;
+  border: 2px solid var(--VeryDarkGrayishBlue);
+  cursor: pointer;
+  padding: 10px;
+}
+
+.todo.checked .check.checked {
+  background: var(--CheckBackground);
+}
+
+.todo.checked span {
+  text-decoration: line-through;
+}
+
+.filters-mobile ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;;
+}
+
+.filters-mobile ul li {
+  cursor: pointer;
+  padding: 10px 20px;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--DarkGrayishBlue);
+  transition: color 0.3s ease-in-out;
+}
+
+.filters-mobile ul li:hover {
+  color: var(--LightGrayishBlueHover);
+}
+
+.light .filters-mobile ul li:hover {
+  color: var(--VeryDarkGrayishBlue);
+}

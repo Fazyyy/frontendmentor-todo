@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <title>Frontend Mentor | Todo app</title>
+  <link rel="preload" as="style" href="assets/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="assets/style.css"></noscript>
+  <script defer src="assets/main.js"></script>
+</head>
+<body class="dark" id="body">
+  <header>
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <h1>TODO</h1>
+        </div>
+        <div class="col">
+          <button id="theme-toggle"><img id="theme-img" src="./images/icon-sun.svg" alt="Toggle theme" /></button>
+        </div>
+      </div>
+      <div class="input">
+        <div class="col-check">
+        </div>
+        <div class="col-text">
+          <input id="input" type="text" placeholder="Create a new todo..."></input>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main class="container">
+    <section class="todos">
+      <div class="container">
+        <div class="todos__list">
+          <div class="todo" id="1" draggable="true">
+            <img class="check" src="./images/icon-check.svg" alt="" />
+            <span>ToDo List Item 1</span>
+            <img class="cross" src="./images/icon-cross.svg" alt="Remove item" />
+          </div>
+          <div class="todo" id="2" draggable="true">
+            <img class="check" src="./images/icon-check.svg" alt="" />
+            <span>ToDo List Item 2</span>
+            <img class="cross" src="./images/icon-cross.svg" alt="Remove item" />
+          </div>
+          <div class="todo" id="3" draggable="true">
+            <img class="check" src="./images/icon-check.svg" alt="" />
+            <span>ToDo List Item 3</span>
+            <img class="cross" src="./images/icon-cross.svg" alt="Remove item" />
+          </div>
+        </div>
+        <div class="filters">
+          <h4 class="items-left"><span id="itemsLeft">0</span> items left</h4>
+          <ul>
+            <li class="filter" data-option="all">All</li>
+            <li class="filter" data-option="active">Active</li>
+            <li class="filter" data-option="completed">Completed</li>
+          </ul>
+          <span class="clear">Clear Completed</span>
+        </div>
+      </div>
+      <div class="filters-mobile">
+        <ul>
+          <li class="filter" data-option="all">All</li>
+          <li class="filter" data-option="active">Active</li>
+          <li class="filter" data-option="completed">Completed</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+
+</body>
+</html>
